@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+/*in this file, I am going find the greatest common divisor between two integers m and n*/
+int gcd(int m, int n);
+
+int main(){
+  int m,n;
+  cout<<"enter two integers:\n";
+  while (cin>>m>>n){
+    int result=gcd(m,n);
+    cout<<"gcd of m and n is "<<result<<endl;}
+  return 0;
+    }
+
+int gcd(int m, int n){
+  int divisor=1;
+  for (int d=min(m,n);d>0;d--)
+      {if(m % d==0 && n % d==0){
+        return d;
+        divisor=d;
+        break;}}
+  return divisor;
+      }
